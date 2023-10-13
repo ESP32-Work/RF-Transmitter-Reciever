@@ -1,17 +1,17 @@
 #ifndef RECEIVER_H
 #define RECEIVER_H
 
-#include <Arduino.h>
 #include <RH_ASK.h>
+#include <SPI.h>
 
 class Receiver {
 public:
-    Receiver(uint16_t baud, uint8_t rxPin);
+    Receiver();
     void initialize();
     bool receiveMessage(uint8_t *buf, uint8_t *buflen);
 
 private:
-    RH_ASK driver;
+    RH_ASK rf_driver;
 };
 
-#endif // RECEIVER_H
+#endif
